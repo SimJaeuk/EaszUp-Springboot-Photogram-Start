@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cos.photogramstart.domain.subscribe.Subscribe;
 import com.cos.photogramstart.domain.subscribe.SubscribeRepository;
+import com.cos.photogramstart.handler.ex.CustomApiException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -16,7 +17,12 @@ public class SubscribeService {
 	
 	@Transactional
 	public void 구독하기(int fromUserId, int toUserId) {
-		subscribeRepository.mSubscribe(fromUserId, toUserId);	
+		try {
+			subscribeRepository.mSubscribe(fromUserId, toUserId);	
+		} catch (Exception e) {
+			throw new CustomApiException("이미 구독한 사용자입니다.");
+		}
+			
 	}
 	
 	@Transactional
