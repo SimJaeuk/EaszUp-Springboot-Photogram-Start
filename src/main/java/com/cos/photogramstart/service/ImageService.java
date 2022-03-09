@@ -41,8 +41,6 @@ public class ImageService {
 		// image 테이블에 저장
 		Image image = imageUploadDto.toEntity(imageFileName, principalDetails.getUser()); // 20220307010704.jpg
 		Image imageEntity = imageRepository.save(image);
-		
-		System.out.println(imageEntity);
 	}
 
 }

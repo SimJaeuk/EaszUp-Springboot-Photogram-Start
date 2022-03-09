@@ -48,9 +48,9 @@ public class User {
 	
 	// 나는 연관관계의 주인이 아니다, 그러므로 테이블에 칼럼을 만들지않겠다.
 	// User를 Select할 때 해당 User id로 등록된 image들을 다 가져오겠다.
-	// Lazy = User를 Select할 때 해당 User id로 등록된 image들을 가져오지 않겠다. - 대신 getImages() 함수가 호출될 때 가져오겠다.
+	// Lazy = User를 Select할 때 해당 User id로 등록된 image들을 가져오지 않겠다. - 대신 getImages() 함수의 image들이 호출될 때 가져오겠다.
 	// Eager = User를 Select할 때 해당 User id로 등록된 image들을 전부 Join해서 가져오겠다.
-	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY) 
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private List<Image> images; // 양방향 매핑
 	
 	private LocalDateTime createDate;
