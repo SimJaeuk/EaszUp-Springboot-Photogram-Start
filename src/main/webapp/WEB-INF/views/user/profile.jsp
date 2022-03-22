@@ -10,6 +10,7 @@
 		<!--유저이미지-->
 		<div class="profile-left">
 			<div class="profile-img-wrap story-border" onclick="popup('.modal-image')">
+
 				<form id="userProfileImageForm">
 					<input type="file" name="profileImageFile" style="display: none;" id="userProfileImageInput" />
 				</form>
@@ -76,7 +77,8 @@
 
 				<!--아이템들-->
 
-				<c:forEach var="image" items="${dto.user.images}"> <!--  EL표현식에서 변수명을 적으면 get함수가 자동 호출된다. -->
+				<c:forEach var="image" items="${dto.user.images}">
+					<!--  EL표현식에서 변수명을 적으면 get함수가 자동 호출된다. -->
 					<div class="img-box">
 						<a href=""> <img src="/upload/${image.postImageUrl}" />
 						</a>
@@ -125,11 +127,8 @@
 			</button>
 		</div>
 
-		<div class="subscribe-list" id="subscribeModalList">
-
-
+		<div class="subscribe-list" id="subscribeModalList"></div>
 	</div>
-</div>
 
 </div>
 
