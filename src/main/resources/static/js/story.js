@@ -210,10 +210,10 @@ function deleteComment(commentId) {
 		type: "delete",
 		url: `/api/comment/${commentId}`,
 		dataType: "json"
-	}).done(res=>{
+	}).done(res => {
 		console.log(res);
 		$(`#storyCommentItem-${commentId}`).remove();
-	}).fail(error=>{
+	}).fail(error => {
 		console.log("오류", error);
 	});
 
