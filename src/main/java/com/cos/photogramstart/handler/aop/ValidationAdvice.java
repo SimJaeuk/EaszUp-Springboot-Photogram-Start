@@ -24,7 +24,6 @@ public class ValidationAdvice {
 		Object[] args = proceedingJoinPoint.getArgs();
 		for (Object arg: args) {
 			if(arg instanceof BindingResult) {
-				System.out.println("유효성 검사를 하는 함수 입니다.");
 				BindingResult bindingResult = (BindingResult) arg;
 				
 				if (bindingResult.hasErrors()) {
